@@ -6,7 +6,7 @@ from time import mktime
 import feedparser
 from babel.dates import format_timedelta
 from discord import Embed
-from discord.ext.commands import Bot, Cog, command
+from discord.ext.commands import Bot, Cog, Context, command
 
 from bot.config import CONFIG
 
@@ -32,7 +32,7 @@ class RSS(Cog):
         self.bot = bot
 
     @command(aliases=["available", "feeds"])
-    async def available_feeds(self, ctx):
+    async def available_feeds(self, ctx: Context) -> None:
         """Post the available feeds."""
         found = set()
         available = []
@@ -51,7 +51,7 @@ class RSS(Cog):
         await ctx.send(embed=embed)
 
     @command()
-    async def feed(self, ctx, *, feed: str = "devblogs") -> None:
+    async def feed(self, ctx: Context, *, feed: str = "devblogs") -> None:
         """Fetch 5 most recent posts from a feed."""
         if feed_url := FEEDS.get(feed.lower()):
             feed = feedparser.parse(feed_url)
