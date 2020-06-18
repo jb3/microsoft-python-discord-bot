@@ -1,9 +1,11 @@
+name: Deploy to Azure
+
 on:
   registry_package:
     types: [published]
 
 jobs:
-    build-and-deploy:
+    deploy:
         runs-on: ubuntu-latest
         steps:
         - name: Login to Azure CLI
