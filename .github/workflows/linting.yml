@@ -20,11 +20,11 @@ jobs:
 
     - name: Poetry Install
       uses: knowsuchagency/poetry-install@v2
-    
+
     - name: Setup flake8 annotations for Pull Request annotation
       uses: rbialon/flake8-annotations@v1
-    
+
     - name: Lint with flake8
       run: |
         poetry run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        poetry run flake8 . --count --exit-zero --max-complexity=10 --statistics
+        poetry run flake8 . --count --exit-zero --statistics

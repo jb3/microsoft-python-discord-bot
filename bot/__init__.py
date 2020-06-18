@@ -15,7 +15,7 @@ load_dotenv()
 logger = logging.getLogger(__name__)
 
 
-def start():
+def start() -> None:
     """Entrypoint for the bot, called by Poetry to start."""
     logs.setup_logging()
 

@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 class MicrosoftPythonBot(Bot):
-    async def on_ready(self):
+    async def on_ready(self) -> None:
         """Handle the on_ready event from Discord, called when the bot comes online."""
         logger.info(f"Logged in as {self.user} connected to {len(self.guilds)} servers")
 
