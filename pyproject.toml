@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "bot"
+version = "0.1.0"
+description = "Discord bot for the Microsoft Python Discord community"
+authors = ["Joseph Banks <joseph@josephbanks.me>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+"discord.py" = "^1.3.3"
+coloredlogs = "^14.0"
+python-dotenv = "^0.13.0"
+toml = "^0.10.1"
+attrdict = "^2.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+bot = "bot:start"
+
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
