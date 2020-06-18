@@ -15,7 +15,7 @@ def get_config() -> AttrDict:
 
     This also handles the swapping between config.toml and config-default.toml
     """
-    config_toml = Path(".config.toml")
+    config_toml = Path("./config.toml")
     config_default = Path("./config-default.toml")
 
     if config_toml.exists():
