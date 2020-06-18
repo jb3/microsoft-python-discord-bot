@@ -8,6 +8,7 @@ on:
 
 jobs:
   lint:
+    name: Lint code
 
     runs-on: ubuntu-latest
 
