@@ -1,0 +1,36 @@
+name: Build Docker image
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+      - master
+
+jobs:
+  test_docker_image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Test build Docker image
+        run: docker build . --file Dockerfile
+
+  push_docker_image:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build . --file Dockerfile -t j03b/microsoft-python-discord-bot/bot:latest
+
+      - name: Publish Docker image
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: j03b/microsoft-python-discord-bot/bot
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
