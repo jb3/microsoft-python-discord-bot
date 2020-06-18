@@ -2,7 +2,6 @@ name: Deploy to Azure
 
 on:
   registry_package:
-    types: [published]
 
 jobs:
     deploy:
