@@ -53,6 +53,7 @@ jobs:
       uses: 'azure/aci-deploy@v1'
       with:
         resource-group: ${{ secrets.RESOURCE_GROUP }}
+        dns-name-label: mpdb # Microsoft Python Discord Bot
         image: docker.pkg.github.com/j03b/microsoft-python-discord-bot/bot:latest
         registry-login-server: docker.pkg.github.com
         registry-username: ${{ github.actor }}
