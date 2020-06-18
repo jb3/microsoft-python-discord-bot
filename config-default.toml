@@ -1,0 +1,5 @@
+# Config for the Discord Bot
+
+[bot]
+# Prefix the bot should respond to commands with
+prefix = "!"
