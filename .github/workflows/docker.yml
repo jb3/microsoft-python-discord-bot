@@ -33,7 +33,7 @@ jobs:
       - name: Publish Docker image
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: j03b/microsoft-python-discord-bot/bot
+          name: j03b/microsoft-python-discord-bot/bot:${{ github.sha }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
