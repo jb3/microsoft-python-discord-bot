@@ -50,7 +50,7 @@ class RSS(Cog):
 
         await ctx.send(embed=embed)
 
-    @command()
+    @command(aliases=["f", "recent"])
     async def feed(self, ctx: Context, *, feed: str = "devblogs") -> None:
         """Fetch 5 most recent posts from a feed."""
         if feed_url := FEEDS.get(feed.lower()):
