@@ -43,6 +43,8 @@ jobs:
     needs: [push_docker_image]
     
     steps:
+      - uses: actions/checkout@v2
+
       - uses: Azure/k8s-set-context@v1
         with:
           method: kubeconfig
