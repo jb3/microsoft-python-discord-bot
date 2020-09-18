@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: bot
-          image: docker.pkg.github.com/j03b/microsoft-python-discord-bot/bot
+          image: docker.pkg.github.com/jb3/microsoft-python-discord-bot/bot
           imagePullPolicy: "IfNotPresent"
           envFrom:
             - secretRef:
