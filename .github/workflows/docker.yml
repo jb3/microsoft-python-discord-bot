@@ -31,7 +31,7 @@ jobs:
         run: docker build . --file Dockerfile -t latest -t jb3/microsoft-python-discord-bot/bot:${{ github.sha }}
 
       - name: Publish Docker image
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: jb3/microsoft-python-discord-bot/bot:${{ github.sha }}
           username: ${{ github.actor }}
